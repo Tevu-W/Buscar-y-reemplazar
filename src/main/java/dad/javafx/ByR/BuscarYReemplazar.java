@@ -42,20 +42,14 @@ public class BuscarYReemplazar extends Application{
 		regular = new CheckBox("Expresión regular");
 		resultados = new CheckBox("Resaltar resultados");
 		
-		VBox Mayus_Regular = new VBox();
-		Mayus_Regular.setAlignment(Pos.BASELINE_LEFT);
-		Mayus_Regular.setSpacing(5);
-		Mayus_Regular.getChildren().addAll(mayus_minus, regular);
-		
-		VBox Atras_Resultados = new VBox();
-		Atras_Resultados.setAlignment(Pos.BASELINE_LEFT);
-		Atras_Resultados.setSpacing(5);
-		Atras_Resultados.getChildren().addAll(atras, resultados);
-		
-		BorderPane cajas = new BorderPane();
-		cajas.setLeft(Mayus_Regular);
-		cajas.setRight(Atras_Resultados);
-		
+		GridPane cajas = new GridPane();
+		cajas.setPadding(new Insets(5));
+		cajas.setHgap(5);
+		cajas.setVgap(5);
+		cajas.add(mayus_minus, 0, 0);
+		cajas.add(regular, 0, 1);
+		cajas.add(atras, 1, 0);
+		cajas.add(resultados, 1, 1);
 		
 		GridPane root = new GridPane();
 		root.setPadding(new Insets(5));
